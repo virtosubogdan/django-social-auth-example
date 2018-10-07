@@ -141,6 +141,14 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.debug.debug'
 )
 
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+if not SOCIAL_AUTH_GOOGLE_OAUTH2_KEY or not SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET:
+    print("Google OAuth2 KEY or SECRET missing so please export SOCIAL_AUTH_GOOGLE_OAUTH2_KEY and "
+          "SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET in you environment. For details see "
+          "https://python-social-auth.readthedocs.io/en/latest/backends/google.html#google-oauth2")
+
+
 SOCIAL_AUTH_DISCONNECT_PIPELINE = (
     # ExtraNotes: Custom handling for preventing disconnects
     'app.extended_pipeline.prepare_disconnect',
