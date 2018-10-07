@@ -2,6 +2,13 @@
 
 ## Example Application for using Python Social Auth with Django
 
+### Setup
+
+Requirements: [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/)
+```
+docker-compose up
+```
+
 ### Documentation
 http://python-social-auth.readthedocs.io/en/latest/
 
